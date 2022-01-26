@@ -4,12 +4,10 @@ import { useState } from 'react';
 
 const FoodBox = (props) => {
   const { img, name, calories, quantity } = props;
-  const [count, setCount] = useState();
+  const [count, setCount] = useState(0);
 
-  const handlClick = (action) => {
-    return () => {
-      action === 'increment' ? setCount(count + 1) : setCount(count - 1);
-    };
+  const handleChange = (e) => {
+    setCount(e.target.value);
   };
 
   return (
@@ -32,15 +30,15 @@ const FoodBox = (props) => {
           <div className="media-right">
             <div className="field has-addons">
               <div className="control">
-                <input className="input" type="number" value="1" />
+                <input
+                  onChange={handleChange}
+                  className="input"
+                  type="number"
+                  value={count}
+                />
               </div>
               <div className="control">
-                <button
-                  onClick={handlClick('increment')}
-                  className="button is-info"
-                >
-                  +
-                </button>
+                <button className="button is-info">+</button>
               </div>
             </div>
           </div>
