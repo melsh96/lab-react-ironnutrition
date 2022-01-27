@@ -3,8 +3,9 @@ import 'bulma/css/bulma.css';
 import { useState } from 'react';
 
 const FoodBox = (props) => {
-  const { img, name, calories, quantity } = props;
+  const { img, name, calories, quantity, addTodaysFood } = props;
   const [count, setCount] = useState(0);
+  const food = { name, calories };
 
   const handleChange = (e) => {
     setCount(e.target.value);
@@ -38,7 +39,12 @@ const FoodBox = (props) => {
                 />
               </div>
               <div className="control">
-                <button className="button is-info">+</button>
+                <button
+                  className="button is-info"
+                  onClick={() => addTodaysFood(food, count)}
+                >
+                  +
+                </button>
               </div>
             </div>
           </div>

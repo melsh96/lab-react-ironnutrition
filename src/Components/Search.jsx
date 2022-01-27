@@ -4,6 +4,8 @@ const Search = ({ searchedString, callbackSearch }) => {
   return (
     <>
       <input
+        class="search"
+        class="input is-rounded"
         type="text"
         placeholder="Search food"
         value={searchedString}

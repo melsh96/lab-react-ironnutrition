@@ -16,10 +16,14 @@ const Form = ({ addFood }) => {
     setQuantity('');
   };
 
+  const addForm = () => {};
+
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
+      <label htmlFor="name"></label>
       <input
+        class="input is-rounded"
+        placeholder="Name"
         type="text"
         name="name"
         id="name"
@@ -27,8 +31,10 @@ const Form = ({ addFood }) => {
         onChange={(e) => setName(e.target.value)}
       />
 
-      <label htmlFor="calories">Calories</label>
+      <label htmlFor="calories"></label>
       <input
+        class="input is-rounded"
+        placeholder="Calories"
         type="text"
         name="calories"
         id="calories"
@@ -36,8 +42,10 @@ const Form = ({ addFood }) => {
         onChange={(e) => setCalories(e.target.value)}
       />
 
-      <label htmlFor="image">Image</label>
+      <label htmlFor="image"></label>
       <input
+        class="input is-rounded"
+        placeholder="Image"
         type="text"
         name="image"
         id="image"
@@ -45,8 +53,10 @@ const Form = ({ addFood }) => {
         onChange={(e) => setImage(e.target.value)}
       />
 
-      <label htmlFor="quantity">Quantity</label>
+      <label htmlFor="quantity"></label>
       <input
+        class="input is-rounded"
+        placeholder="Quantity"
         type="text"
         name="quantity"
         id="quantity"
@@ -54,7 +64,7 @@ const Form = ({ addFood }) => {
         onChange={(e) => setQuantity(e.target.value)}
       />
 
-      <button>Add food</button>
+      <button class="button is-info">Add food</button>
     </form>
   );
 };
